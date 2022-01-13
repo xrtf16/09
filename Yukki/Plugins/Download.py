@@ -24,11 +24,11 @@ __HELP__ = """
 **Note:**
 Only for Sudo Users.
 
-/gban [Username or Reply to a user]
-- Ban a user globally in Bot's Served Chats and prevents user from using bot commands.
+/gban [اسم المستخدم أو الرد على المستخدم]
+- حظر مستخدم عالميًا في الدردشات التي يقدمها برنامج Bot ويمنع المستخدم من استخدام أوامر bot.
 
-/ungban [Username or Reply to a user]
-- Remove a user from Bot's GBan List.
+/ungban [اسم المستخدم أو الرد على المستخدم]
+- قم بإزالة مستخدم من قائمة GBan الخاصة بالبوت.
 """
 
 
@@ -71,11 +71,11 @@ async def ytdata(_, CallbackQuery):
 
 
 inl = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="Downloading......", callback_data=f"down")]]
+    [[InlineKeyboardButton(text="جارى التحميل......", callback_data=f"down")]]
 )
 
 upl = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="Uploading......", callback_data=f"down")]]
+    [[InlineKeyboardButton(text="جارى الرفع.....", callback_data=f"down")]]
 )
 
 
@@ -83,15 +83,15 @@ def inl_mark(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="Download or Upload Failed......", callback_data=f"down"
+                text="فشل التنزيل أو التحميل ......", callback_data=f"down"
             )
         ],
         [
             InlineKeyboardButton(
-                text="⬅️  Go Back", callback_data=f"good {videoid}|{user_id}"
+                text="⬅️  رجوع", callback_data=f"good {videoid}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="🗑 Close Menu", callback_data=f"close2"
+                text="🗑 اغلاق القائمه", callback_data=f"close2"
             ),
         ],
     ]
@@ -109,7 +109,7 @@ async def boom(_, CallbackQuery):
     user_id = CallbackQuery.from_user.id
     type, format_id, videoid = callback_request.split("||")
     mystic = await CallbackQuery.edit_message_text(
-        "Download Started\n\nDownloading speed could be slow. Please hold on..",
+        "بدأ التنزيل\n\nقد تكون سرعة التنزيل بطيئة. انتظر من فضلك..",
         reply_markup=inl,
     )
     yturl = f"https://www.youtube.com/watch?v={videoid}"
@@ -121,16 +121,14 @@ async def boom(_, CallbackQuery):
         thumb_image_path = result["thumbnails"][0]["url"]
         channel = channel = result["channel"]["name"]
         fetched = f"""
-🔍**Track Downloaded**
+🔍 ** تم تنزيل المسار **
+❇️ ** العنوان: ** {title}
+⏳ ** المدة: ** {duration} Mins
+👀 ** المشاهدات: ** `{views}`
+🎥 ** اسم القناة: ** {channel}
+🔗 ** رابط الفيديو:** [Link]({yturl})
 
-❇️**Title:** {title}
-
-⏳**Duration:** {duration} Mins
-👀**Views:** `{views}`
-🎥**Channel Name:** {channel}
-🔗**Video Link:** [Link]({yturl})
-
-⚡️ __Youtube Inline Download Powered By {MUSIC_BOT_NAME}__"""
+⚡️ __ تنزيل YouTube مضمّن مدعوم من {MUSIC_BOT_NAME}__"""
     filext = "%(title)s.%(ext)s"
     userdir = os.path.join(os.getcwd(), "downloads", str(user_id))
     if not os.path.isdir(userdir):

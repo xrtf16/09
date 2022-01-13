@@ -16,35 +16,35 @@ __HELP__ = f"""
 
 
 /checkassistant
-- Check the alloted assistant of your chat
+- تحقق من المساعد المخصص للدردشة الخاصة بك
 
 
 **Note:**
-- Only for Sudo Users
+-فقط للمطورين
 
-{ASSISTANT_PREFIX[0]}block [ Reply to a User Message] 
-- Blocks the User from Assistant Account.
+{ASSISTANT_PREFIX[0]}block [ الرد على رسالة المستخدم] 
+- يحظر المستخدم من حساب المساعد.
 
-{ASSISTANT_PREFIX[0]}unblock [ Reply to a User Message] 
-- Unblocks the User from Assistant Account.
+{ASSISTANT_PREFIX[0]}unblock [ الرد على رسالة المستخدم] 
+- يفتح المستخدم من حساب المساعد.
 
-{ASSISTANT_PREFIX[0]}approve [ Reply to a User Message] 
-- Approves the User for DM.
+{ASSISTANT_PREFIX[0]}approve [ الرد على رسالة المستخدم] 
+- يوافق على مستخدم DM.
 
-{ASSISTANT_PREFIX[0]}disapprove [ Reply to a User Message] 
-- Disapproves the User for DM.
+{ASSISTANT_PREFIX[0]}disapprove [ الرد على رسالة المستخدم] 
+- Disيوافق على مستخدم .
 
-{ASSISTANT_PREFIX[0]}pfp [ Reply to a Photo] 
-- Changes Assistant account PFP.
+{ASSISTANT_PREFIX[0]}pfp [ الرد على الصورة] 
+- تغييرات حساب مساعد PFP.
 
-{ASSISTANT_PREFIX[0]}bio [Bio text] 
-- Changes Bio of Assistant Account.
+{ASSISTANT_PREFIX[0]}bio [نص السيرة الذاتية] 
+- يغير السيرة الذاتية لحساب المساعد.
 
 /changeassistant [ASS NUMBER]
-- Change the previoius alloted assistant to new one.
+- تغيير المساعد المخصص previoius إلى المساعد الجديد.
 
-/setassistant [ASS NUMBER or Random]
-- Set a assistant account for chat. 
+/setassistant [رقم  الحساب مساعد]
+- قم بتعيين حساب مساعد للدردشة. 
 """
 
 
@@ -53,7 +53,7 @@ ass_num_list = ["1", "2", "3", "4", "5"]
 
 @app.on_message(filters.command("changeassistant") & filters.user(SUDOERS))
 async def assis_change(_, message: Message):
-    usage = f"**Usage:**\n/changeassistant [ASS_NO]\n\nSelect from them\n{' | '.join(ass_num_list)}"
+    usage = f"** طريقه استعمالي :**\n/changeassistant + رقم الحساب\n\nاختر منهم\n{' | '.join(ass_num_list)}"
     if len(message.command) != 2:
         return await message.reply_text(usage)
     num = message.text.split(None, 1)[1].strip()
@@ -63,7 +63,7 @@ async def assis_change(_, message: Message):
     _assistant = await get_assistant(message.chat.id, "assistant")
     if not _assistant:
         return await message.reply_text(
-            "No Pre-Saved Assistant Found.\n\nYou can set Assistant Via /setassistant"
+            "لم يتم العثور على مساعد محفوظ مسبقًا.\n\nيمكنك ضبط المساعد عبر /setassistant"
         )
     else:
         ass = _assistant["saveassistant"]
@@ -72,29 +72,29 @@ async def assis_change(_, message: Message):
     }
     await save_assistant(message.chat.id, "assistant", assis)
     await message.reply_text(
-        f"**Changed Assistant**\n\nChanged Assistant Account from **{ass}** to Assistant Number **{ass_num}**"
+        f"**المساعد المتغير**\n\nالمساعد المتغير حساب من **{ass}** إلى رقم المساعد **{ass_num}**"
     )
 
 
-ass_num_list2 = ["1", "2", "3", "4", "5", "Random"]
+ass_num_list2 = ["1", "2", "3", "4", "5", "عشوائي"]
 
 
 @app.on_message(filters.command("setassistant") & filters.user(SUDOERS))
 async def assis_change(_, message: Message):
-    usage = f"**Usage:**\n/setassistant [ASS_NO or Random]\n\nSelect from them\n{' | '.join(ass_num_list2)}\n\nUse 'Random' to set random Assistant"
+    usage = f"** طريقه استعمالي :**\n/setassistant [رقم  الحساب مساعد]\n\nاختر منهم\n{' | '.join(ass_num_list2)}\n\nاختر  الحساب مساعد للمجموعه"
     if len(message.command) != 2:
         return await message.reply_text(usage)
     query = message.text.split(None, 1)[1].strip()
     if query not in ass_num_list2:
         return await message.reply_text(usage)
-    if str(query) == "Random":
+    if str(query) == "عشوائي":
         ran_ass = random.choice(random_assistant)
     else:
         ran_ass = int(message.text.strip().split()[1])
     _assistant = await get_assistant(message.chat.id, "assistant")
     if not _assistant:
         await message.reply_text(
-            f"**__Yukki Music Bot Assistant Alloted__**\n\nAssistant No. **{ran_ass}**"
+            f"**__تم تخصيص برنامج  Music Bot __**\n\nمساعد لا. **{ran_ass}**"
         )
         assis = {
             "saveassistant": ran_ass,
@@ -103,7 +103,7 @@ async def assis_change(_, message: Message):
     else:
         ass = _assistant["saveassistant"]
         return await message.reply_text(
-            f"Pre-Saved Assistant Number {ass} Found.\n\nYou can change Assistant Via /changeassistant"
+            f"رقم الحساب الموجود حاليآ هوه {ass} موجود.\n\nيمكنك تغيير المساعد عبر ارسال الامر /changeassistant"
         )
 
 
@@ -112,10 +112,10 @@ async def check_ass(_, message: Message):
     _assistant = await get_assistant(message.chat.id, "assistant")
     if not _assistant:
         return await message.reply_text(
-            "No Pre-Saved Assistant Found.\n\nYou can set Assistant Via /play"
+            "لم يتم العثور على مساعد محفوظ مسبقًا.\n\nيمكنك ضبط المساعد عبر /play"
         )
     else:
         ass = _assistant["saveassistant"]
         return await message.reply_text(
-            f"Pre-Saved Assistant Found\n\nAssistanty Number {ass} "
+            f"تم العثور على المساعد المحفوظ مسبقًا\n\nرقم مساعد {ass} "
         )
