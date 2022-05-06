@@ -55,7 +55,7 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨قناه البوت", url=f"{SUPPORT_GROUP}"
+                    text="‹ المطور ›", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -74,7 +74,7 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨قناه السورس", url=f"{SUPPORT_CHANNEL}"
+                    text="‹ قناه السورس ›", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -93,10 +93,10 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨قناه السورس", url=f"{SUPPORT_CHANNEL}"
+                    text="‹ قناه السورس ›", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="📨قناه البوت", url=f"{SUPPORT_GROUP}"
+                    text="‹ المطور ›", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -134,7 +134,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨قناه البوت", url=f"{SUPPORT_GROUP}"
+                    text="‹ المطور ›", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -154,7 +154,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨قناه السورس", url=f"{SUPPORT_CHANNEL}"
+                    text="‹ قناه السورس ›", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -177,7 +177,7 @@ def private_panel():
                     text="📨قناه السورس", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="📨قناه البوت", url=f"{SUPPORT_GROUP}"
+                    text="‹ المطور ›", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
