@@ -31,7 +31,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
@@ -45,7 +45,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
@@ -64,7 +64,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
@@ -83,7 +83,7 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
@@ -108,12 +108,12 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ أضفني إلى مجموعت",
+                    "‹ اضف البوت في مجموعتك ›",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -123,12 +123,12 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ أضفني إلى مجموعت",
+                    "‹ اضف البوت في مجموعتك ›",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -143,12 +143,12 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ أضفني إلى مجموعت",
+                    "‹ اضف البوت في مجموعتك ›",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -163,12 +163,12 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="🗂قائمة أوامر المساعد", callback_data="shikhar"
+                    text="• اوامر البوت •", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ أضفني إلى مجموعت",
+                    "‹ اضف البوت في مجموعتك ›",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
