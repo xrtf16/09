@@ -229,11 +229,12 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""Hello ,
-My name is {BOT_NAME}.
-A Telegram Music+Video Streaming bot with some useful features.
+home_text_pm = f"""᥀︙ههلا عمࢪي ,
+᥀︙انا بۅت اسمي {BOT_NAME}.
+᥀︙استطيع تشغيل المۅسيقى والفديۅ في المكالمة الصۅتية
+᥀︙اضفني الى مجمۅعتك وقم بࢪفعي مشࢪف ثم اࢪسل /play 
 
-All commands can be used with: / """
+᥀︙يمكن استخدام جميع الاوامࢪ مع: / """
 
 
 @app.on_message(filters.command("help") & filters.private)
@@ -373,11 +374,11 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """Hello {first_name},
+        """اهلا {first_name},
 
-Click on the buttons for more information.
+انقر على الأزرار لمزيد من المعلومات .
 
-All commands can be used with: /
+يمكن استخدام جميع الأوامر مع: /
 """.format(
             first_name=name
         ),
