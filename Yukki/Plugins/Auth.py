@@ -9,7 +9,7 @@ from Yukki.Decorators.admins import AdminActual
 from Yukki.Utilities.changers import (alpha_to_int, int_to_alpha,
                                       time_to_seconds)
 
-__MODULE__ = "Auth Users"
+__MODULE__ = "• اوامࢪ المعتمد •"
 __HELP__ = """
 
 **Note:**
