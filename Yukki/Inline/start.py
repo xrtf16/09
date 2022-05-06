@@ -174,7 +174,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="📨قناه السورس", url=f"{SUPPORT_CHANNEL}"
+                    text="‹ قناه السورس ›", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
                     text="‹ المطور ›", url=f"{SUPPORT_GROUP}"
