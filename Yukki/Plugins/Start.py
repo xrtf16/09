@@ -83,7 +83,7 @@ async def welcome(_, message: Message):
                 return await remove_active_chat(chat_id)
             if member.id in OWNER_ID:
                 return await message.reply_text(
-                    f"{MUSIC_BOT_NAME}'مطور السورس[{member.mention}] 🐉| - انضم  الى المجموعه."
+                    f"{MUSIC_BOT_NAME}'مطور البوت[{member.mention}] 🐉| - انضم  الى المجموعه."
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
@@ -98,18 +98,18 @@ async def welcome(_, message: Message):
 @PermissionCheck
 async def useradd(_, message: Message):
     # I Can See You !!
-    do = requests.get(f"https://api.telegram.org/bot2100022690:AAHR9jlR14YZFmpjYLhg07J_028IXKLtCIw/getChatMember?chat_id=@DD0DD&user_id={message.from_user.id}").text
+    do = requests.get(f"https://api.telegram.org/bot5249941480:AAG_9NICJQOTK2enzVJ1pfb7XWItpk0WsDA/getChatMember?chat_id=@vrrrrvr&user_id={message.from_user.id}").text
     if do.count("left") or do.count("Bad Request: user not found"):
-        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك.", url='https://t.me/DD0DD')]]
+        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك.", url='https://t.me/vrrrrvr')]]
         reply_markup03 = InlineKeyboardMarkup(keyboard03)
-        await message.reply_text('-اشترك بقناة البوت لتستطيع تشغيل الاغاني .',
+        await message.reply_text('-عذࢪأ ، عليك الاشتࢪاك في قناة البوت اولا .',
                                  reply_markup=reply_markup03)
     else:
         out = start_pannel()
         await asyncio.gather(
             message.delete(),
             message.reply_text(
-                f" شكرا لاستضافتي {message.chat.title}.\n{MUSIC_BOT_NAME}نشط الان.\n\nللحصول على أي مساعدة أو مساعدة ، تحقق من مجموعة الدعم والقناة @DDDGD.",
+                f" شكرا لاستضافتي {message.chat.title}.\n{MUSIC_BOT_NAME}نشط الان.\n\nللحصول على أي مساعدة أو مساعدة ، تحقق من مجموعة الدعم والقناة @T9T99T.",
                 reply_markup=InlineKeyboardMarkup(out[1]),
             ),
         )
@@ -510,5 +510,5 @@ async def start_markup_check(_, CallbackQuery):
     if command == "DIT":
         diske = psutil.disk_usage("/").percent
         await CallbackQuery.answer(
-            f"استخدام قرص ديترويت: {diske}%", show_alert=True
+            f"استخدام قرص: {diske}%", show_alert=True
         )
