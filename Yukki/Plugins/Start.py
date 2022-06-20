@@ -98,9 +98,9 @@ async def welcome(_, message: Message):
 @PermissionCheck
 async def useradd(_, message: Message):
     # I Can See You !!
-    do = requests.get(f"https://api.telegram.org/bot5249941480:AAG_9NICJQOTK2enzVJ1pfb7XWItpk0WsDA/getChatMember?chat_id=@vrrrrvr&user_id={message.from_user.id}").text
+    do = requests.get(f"https://api.telegram.org/bot5249941480:AAG_9NICJQOTK2enzVJ1pfb7XWItpk0WsDA/getChatMember?chat_id=@QII_ll&user_id={message.from_user.id}").text
     if do.count("left") or do.count("Bad Request: user not found"):
-        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك.", url='https://t.me/vrrrrvr')]]
+        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك.", url='https://t.me/QII_ll')]]
         reply_markup03 = InlineKeyboardMarkup(keyboard03)
         await message.reply_text('-عذࢪأ ، عليك الاشتࢪاك في قناة البوت اولا .',
                                  reply_markup=reply_markup03)
@@ -109,7 +109,7 @@ async def useradd(_, message: Message):
         await asyncio.gather(
             message.delete(),
             message.reply_text(
-                f" شكرا لاستضافتي {message.chat.title}.\n{MUSIC_BOT_NAME}نشط الان.\n\nللحصول على أي مساعدة أو مساعدة ، تحقق من مجموعة الدعم والقناة @T9T99T.",
+                f" شكرا لاستضافتي {message.chat.title}.\n{MUSIC_BOT_NAME}نشط الان.\n\nللحصول على أي مساعدة أو مساعدة ، تحقق من مجموعة الدعم والقناة @FranceSxG.",
                 reply_markup=InlineKeyboardMarkup(out[1]),
             ),
         )
@@ -249,7 +249,7 @@ async def start_markup_check(_, CallbackQuery):
         _check = await get_start(c_id, "assistant")
         volume = _check["volume"]
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**مجموعة:** {c_title}\n**معرف مجموعة:** {c_id}\n**مستوى الصوت اولي:** {volume}%\n\nالتحقق من {MUSIC_BOT_NAME}'إحصائيات النظام في لوحة القيادة هنا! سيتم إضافة المزيد من الوظائف قريبًا جدًا! استمر في التحقق من قناة الدعم@DDDGD.",
+            text=f"{text}\n\n**مجموعة:** {c_title}\n**معرف مجموعة:** {c_id}\n**مستوى الصوت اولي:** {volume}%\n\nالتحقق من {MUSIC_BOT_NAME}'إحصائيات النظام في لوحة القيادة هنا! سيتم إضافة المزيد من الوظائف قريبًا جدًا! استمر في التحقق من قناة الدعم@QII_ll.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "Custommarkup":
